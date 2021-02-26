@@ -11,7 +11,10 @@ namespace ElevenNote.Data
     {
         [Key]
         public int CatId { get; set; }
+
         [Required]
         public string CatName { get; set; }
+
+        public virtual List<CategoryNote> Note { get; set; }
     }
 }

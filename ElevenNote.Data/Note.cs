@@ -22,14 +22,11 @@ namespace ElevenNote.Data
         [Required]
         public string Content { get; set; }
 
-        [ForeignKey(nameof (Category))]
-        public int CatId { get; set; }
-        public virtual Category Category { get; set; }
-
         [Required]
         public DateTimeOffset CreatedUtc { get; set; }
 
         public DateTimeOffset? ModifiedUtc { get; set; }
 
+        public virtual ICollection<CategoryNote> Categories { get; set; } = new List<CategoryNote>();
     }
 }
